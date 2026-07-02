@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhoSampled MVP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+<body>
+  <header>
+    <h1>WhoSampled MVP</h1>
+    <nav>
+      <button onclick="app.showView('home-view')">Home</button>
+      <button onclick="app.showView('submit-view')">Add Data</button>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Home / Search View -->
+    <section id="home-view" class="view active">
+      <h2>Search Tracks</h2>
+      <input type="text" id="search-input" placeholder="Search by artist, title, or alias...">
+      <ul id="search-results"></ul>
+    </section>
+
+    <!-- Track Detail View -->
+    <section id="track-detail-view" class="view">
+      <button onclick="app.showView('home-view')">Back</button>
+      <div id="track-detail-content"></div>
+      
+      <h3>Sampled Into (Target Tracks)</h3>
+      <ul id="sampled-into-list"></ul>
+
+      <h3>Sampled From (Source Tracks)</h3>
+      <ul id="sampled-from-list"></ul>
+    </section>
+
+    <!-- Compare / Playback View -->
+    <section id="compare-view" class="view">
+      <button onclick="app.showView('track-detail-view')">Back</button>
+      <div class="compare-container">
+        <div class="video-wrapper">
+          <h3>Target: <span id="target-title"></span></h3>
+          <div id="target-player"></div>
+          <button id="target-play-btn">Play from <span id="target-start">0</span>s</button>
+        </div>
+        <div class="video-wrapper">
+          <h3>Source: <span id="source-title"></span></h3>
+          <div id="source-player"></div>
+          <button id="source-play-btn">Play from <span id="source-start">0</span>s</button>
+        </div>
+      </div>
+      <p>Sample Type: <strong id="compare-sample-type"></strong></p>
+    </section>
+
+    <!-- Data Submission View -->
+    <section id="submit-view" class="view">
+      <h2>Submit New Data</h2>
+      <p>Please submit new sampling data via GitHub Issues.</p>
+      <form id="submit-form">
+        <label for="submit-target">Target Track Name / Artist:</label>
+        <input type="text" id="submit-target" required>
+        
+        <label for="submit-source">Source Track Name / Artist:</label>
+        <input type="text" id="submit-source" required>
+
+        <label for="submit-type">Sample Type:</label>
+        <input type="text" id="submit-type" required>
+
+        <button type="submit">Open GitHub Issue</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

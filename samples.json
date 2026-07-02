@@ -1,0 +1,10 @@
+[
+  {
+    "relationId": "r_001",
+    "targetTrackId": "t_001", 
+    "sourceTrackId": "t_002",
+    "sampleType": "Vocal / Lyrics",
+    "targetStartSeconds": 15,
+    "sourceStartSeconds": 102
+  }
+]

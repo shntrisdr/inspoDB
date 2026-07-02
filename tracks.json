@@ -1,0 +1,16 @@
+[
+  {
+    "id": "t_001",
+    "artist": "Kanye West",
+    "aliases": ["Ye", "カニエ・ウェスト"],
+    "title": "Through the Wire",
+    "youtubeId": "uvb-1wjAtk4"
+  },
+  {
+    "id": "t_002",
+    "artist": "Chaka Khan",
+    "aliases": ["チャカ・カーン"],
+    "title": "Through the Fire",
+    "youtubeId": "QkO2yX8a3jM"
+  }
+]
